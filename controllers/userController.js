@@ -7,7 +7,7 @@ export const registerUserCtrl = async (req, res) => {
   try {
 
     const userExists = await User.findOne({
-      $or: [{ email }, { "personal_info.username": username }],
+      $or: [{ email }, { username }],
     });
     if (userExists) {
  
